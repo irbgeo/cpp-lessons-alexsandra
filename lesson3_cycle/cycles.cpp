@@ -9,9 +9,6 @@ int main()
     //     /* code */
     // }
 
-
-    // hi geo
-
     cout << "for\n";
     for (int i = 0; i < 10; i++)
     {
