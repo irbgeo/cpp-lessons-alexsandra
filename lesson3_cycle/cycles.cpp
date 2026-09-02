@@ -42,4 +42,17 @@ int main()
         cout << i << "\n";
         i++;
     } while (i < 10);
+
+    cout << "continue and break\n";
+    for (int i = 0; i < 10; i++)
+    {
+        if (i%2==0){
+            continue;
+        }
+
+        if (i == 7){
+            break;
+        }
+        cout << i << "\n";
+    }
 }
