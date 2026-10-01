@@ -6,9 +6,7 @@
 // [] [] [] []
 // [] [] [] []
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
@@ -18,8 +16,8 @@ int main()
     {
         for (int j = 0; j < 4; j++)
         {
-            cout << "enter [ " << i << "; " << j << " ] ";
-            cin >> matrix[i][j];
+            printf("enter [ %d; %d ] ", i, j);
+            scanf("%d", &matrix[i][j]);
         }
     }
 
@@ -27,9 +25,9 @@ int main()
     {
         for (int j = 0; j < 4; j++)
         {
-            cout << matrix[i][j] << " ";
+            printf("%d ", matrix[i][j]);
         }
-        cout << "\n";
+        printf("\n");
     }
 
     int maxSumLine = 0, idxMaxLine = 0;

@@ -1,24 +1,23 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    bool flag_true = true, flag_false = false;
+    // in C there is no bool type: we use int, 1 is true and 0 is false
+    int flag_true = 1, flag_false = 0;
 
-    cout << "flag_true = " << flag_true << " flag_false = " << flag_false << "\n";
+    printf("flag_true = %d flag_false = %d\n", flag_true, flag_false);
 
     // == equal
-    cout << "flag_true == flag_true -> " << (flag_true == flag_true) << "\n";
-    cout << "flag_false == flag_true -> " << (flag_false == flag_true) << "\n";
-    cout << "1 == 1 -> " << (1 == 1) << "\n";
-    cout << "4 == 5 -> " << (4 == 5) << "\n";
+    printf("flag_true == flag_true -> %d\n", flag_true == flag_true);
+    printf("flag_false == flag_true -> %d\n", flag_false == flag_true);
+    printf("1 == 1 -> %d\n", 1 == 1);
+    printf("4 == 5 -> %d\n", 4 == 5);
 
     // != not equal
-    cout << "flag_true != flag_true -> " << (flag_true != flag_true) << "\n";
-    cout << "flag_false != flag_true -> " << (flag_false != flag_true) << "\n";
-    cout << "1 != 1 -> " << (1 != 1) << "\n";
-    cout << "4 != 5 -> " << (4 != 5) << "\n";
+    printf("flag_true != flag_true -> %d\n", flag_true != flag_true);
+    printf("flag_false != flag_true -> %d\n", flag_false != flag_true);
+    printf("1 != 1 -> %d\n", 1 != 1);
+    printf("4 != 5 -> %d\n", 4 != 5);
 
     // && AND
     // 0 && 0 -> 0
@@ -26,8 +25,8 @@ int main()
     // 0 && 1 -> 0
     // 1 && 1 -> 1
 
-    cout << "true && true -> " << (true && true) << "\n";
-    cout << "true && false -> " << (true && false) << "\n";
+    printf("true && true -> %d\n", 1 && 1);
+    printf("true && false -> %d\n", 1 && 0);
 
     // || OR
     // 0 || 0 -> 0
@@ -35,18 +34,18 @@ int main()
     // 0 || 1 -> 1
     // 1 || 1 -> 1
 
-    cout << "true || true -> " << (true || true) << "\n";
-    cout << "true || false -> " << (true || false) << "\n";
-    cout << "false || false -> " << (false || false) << "\n";
+    printf("true || true -> %d\n", 1 || 1);
+    printf("true || false -> %d\n", 1 || 0);
+    printf("false || false -> %d\n", 0 || 0);
 
     // ! Not
     // !0 -> 1
     // !1 -> 0
 
-    cout << "!false  -> " << (!false) << "\n";
-    cout << "!true -> " << (!true) << "\n";
+    printf("!false  -> %d\n", !0);
+    printf("!true -> %d\n", !1);
 
-    bool f1 = true, f2 = true;
+    int f1 = 1, f2 = 1;
 
     // !f1 || (f1 && f2)
     // f1 f2
@@ -55,18 +54,18 @@ int main()
     // 1 0 -> 0
     // 1 1 -> 1
 
-    bool cond = !f1 || (f1 && f2);
+    int cond = !f1 || (f1 && f2);
 
     // if (conditional) { ...conditional is true... }
     // else {...conditional is false...}
 
     if (!f1 || (f1 && f2))
     {
-        cout << "true\n";
+        printf("true\n");
     }
     else
     {
-        cout << "false\n";
+        printf("false\n");
     }
 
     // if (conditional1) { ...conditional is true... }
@@ -75,15 +74,15 @@ int main()
 
     if (!f1 || (f1 && f2))
     {
-        cout << "!f1 || (f1 && f2) is true\n";
+        printf("!f1 || (f1 && f2) is true\n");
     }
     else if (f1 || (f1 && f2))
     {
-        cout << "f1 || (f1 && f2) is false\n";
+        printf("f1 || (f1 && f2) is false\n");
     }
     else
     {
-        cout << "both is false\n";
+        printf("both is false\n");
     }
 
     return 0;

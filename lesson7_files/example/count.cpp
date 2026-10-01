@@ -1,22 +1,19 @@
 // 3. Прочитать числа из файла до конца (без N) и посчитать их количество
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    ifstream fin("./lesson7_files/example/count_input.txt");
+    FILE *fin = fopen("./lesson7_files/example/count_input.txt", "r");
 
     int count = 0;
     int x;
-    while (fin >> x)
+    while (fscanf(fin, "%d", &x) == 1)
     {
         count++;
     }
 
-    fin.close();
+    fclose(fin);
 
-    cout << "count = " << count << "\n";
+    printf("count = %d\n", count);
 }

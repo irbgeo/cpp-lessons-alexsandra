@@ -1,10 +1,9 @@
-﻿#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 //1. Функция sayHello() - выводит "Hello!"
 void sayHello()
 {
-    cout << "Hello!"<<"\n";
+    printf("Hello!\n");
 }
 
 //2. Функция add(int a, int b) - возвращает сумму
@@ -19,20 +18,20 @@ int multiply(int a, int b)
     return a * b;
 }
 
-//4. Функция isPrime(int n) - проверка простого числа
+//4. Функция isPrime(int n) - проверка простого числа (1 - простое, 0 - нет)
 int isPrime(int n)
 {
     if (n <= 1) {
-        return false;
+        return 0;
     }
 
     for (int i = 2; i*i <= n; i++) {
         if (n%i == 0){
-            return false;
+            return 0;
         }
     }
 
-    return true;
+    return 1;
 }
 
 
@@ -52,15 +51,16 @@ int factorial(int n)
 
 //6. Функция gcd(int a, int b) - НОД через алгоритм Евклида
 int gcd(int a, int b) {
-    while (b != 0) {  
+    while (b != 0) {
         int tmp = b;
         b = a % b;
         a = tmp;
     }
-    return a; 
+    return a;
 }
 
 // 7. Функция абсолютное значение abs(int x)
+// (в библиотеке есть готовая: abs из <stdlib.h>)
 int abs(int x){
     if (x >= 0){
         return x;
@@ -73,15 +73,15 @@ int main()
 {
     sayHello();
 
-    cout << "2. " << add(10, 5) << "\n";
+    printf("2. %d\n", add(10, 5));
 
-    cout << "3. " << multiply(10, 5) << "\n";
+    printf("3. %d\n", multiply(10, 5));
 
-    cout << "4. " << isPrime(13) << "\n";
+    printf("4. %d\n", isPrime(13));
 
-    cout << "5. " << factorial(5) << "\n";
+    printf("5. %d\n", factorial(5));
 
-    cout << "6. " << gcd(24, 18) << "\n";
+    printf("6. %d\n", gcd(24, 18));
 
     return 0;
 }

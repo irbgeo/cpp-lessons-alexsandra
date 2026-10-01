@@ -2,52 +2,49 @@
 // 5
 // 10 20 30 40 50
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
 
-    cout << -16 % 10;
+    printf("%d", -16 % 10);
     // 1. чтение до конца файла, пока числа не закончатся
-    ifstream fileInAll("./lesson7_files/input.txt");
+    FILE *fileInAll = fopen("./lesson7_files/input.txt", "r");
 
-    if (!fileInAll.is_open())
+    if (fileInAll == NULL)
     {
-        cout << "cannot open input.txt\n";
+        printf("cannot open input.txt\n");
         return 1;
     }
 
     int count = 0;
     int sum = 0;
     int value;
-    while (fileInAll >> value)
+    while (fscanf(fileInAll, "%d", &value) == 1)
     {
         count++;
         sum += value;
     }
 
-    cout << "numbers in file: " << count << ", sum: " << sum << "\n";
+    printf("numbers in file: %d, sum: %d\n", count, sum);
 
-    fileInAll.close();
+    fclose(fileInAll);
 
     // 2. чтение известного количества: сначала N, потом N чисел
-    ifstream finN("./lesson7_files/input.txt");
+    FILE *finN = fopen("./lesson7_files/input.txt", "r");
 
-    if (!finN.is_open())
+    if (finN == NULL)
     {
-        cout << "cannot open input.txt\n";
+        printf("cannot open input.txt\n");
         return 1;
     }
 
     int n;
-    finN >> n;
+    fscanf(finN, "%d", &n);
 
     int sumN = 0;
     count = 0;
-    while (finN >> value && count != n)
+    while (fscanf(finN, "%d", &value) == 1 && count != n)
     {
         count++;
         sumN += value;
@@ -55,16 +52,16 @@ int main()
 
     if (n > count)
     {
-        cout << "expected: " << n << " have: " << count << "\n";
+        printf("expected: %d have: %d\n", n, count);
     }
-    cout << "n = " << n << ", sum of n numbers = " << sumN << "\n";
+    printf("n = %d, sum of n numbers = %d\n", n, sumN);
 
-    finN.close();
+    fclose(finN);
 
     // 3. запись результата в файл
-    ofstream fout("./lesson7_files/output.txt");
-    fout << sumN << "\n";
-    fout.close();
+    FILE *fout = fopen("./lesson7_files/output.txt", "w");
+    fprintf(fout, "%d\n", sumN);
+    fclose(fout);
 
-    cout << "result written to output.txt\n";
+    printf("result written to output.txt\n");
 }

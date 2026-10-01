@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
@@ -9,10 +7,10 @@ int main()
     //     /* code */
     // }
 
-    cout << "for\n";
+    printf("for\n");
     for (int i = 0; i < 10; i++)
     {
-        cout << i << "\n";
+        printf("%d\n", i);
     }
 
     // while (condition)
@@ -20,11 +18,11 @@ int main()
     //     /* code */
     // }
 
-    cout << "while\n";
+    printf("while\n");
     int i = 0;
     while (i < 10)
     {
-        cout << i << "\n";
+        printf("%d\n", i);
         i++;
     }
 
@@ -35,15 +33,15 @@ int main()
     //     /* code */
     // } while (condition);
 
-    cout << "do while\n";
+    printf("do while\n");
     i = 0;
     do
     {
-        cout << i << "\n";
+        printf("%d\n", i);
         i++;
     } while (i < 10);
 
-    cout << "continue and break\n";
+    printf("continue and break\n");
     for (int i = 0; i < 10; i++)
     {
         if (i%2==0){
@@ -53,6 +51,8 @@ int main()
         if (i == 7){
             break;
         }
-        cout << i << "\n";
+        printf("%d\n", i);
     }
+
+    return 0;
 }

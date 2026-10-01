@@ -1,24 +1,22 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int a = 0, b = 0, c = 0;
-    cin >> a >> b >> c;
+    scanf("%d %d %d", &a, &b, &c);
 
     if (a > b && a > c)
     {
-        cout << "a = " << a << " is the largest number\n";
+        printf("a = %d is the largest number\n", a);
     }
 
     if (b > a && b > c)
     {
-        cout << "b = " << b << " is the largest number\n";
+        printf("b = %d is the largest number\n", b);
     }
 
     if (c > b && c > a)
     {
-        cout << "c = " << c << " is the largest number\n";
+        printf("c = %d is the largest number\n", c);
     }
 }

@@ -1,24 +1,22 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int len = 0;
-    cout << "enter len of array ";
-    cin >> len;
+    printf("enter len of array ");
+    scanf("%d", &len);
 
     int arr[len];
 
-    cout << "enter array ";
+    printf("enter array ");
     for (int idx = 0; idx < len; idx++)
     {
-        cin >> arr[idx];
+        scanf("%d", &arr[idx]);
     }
 
     int goal = 0;
-    cout << "enter goal value ";
-    cin >> goal;
+    printf("enter goal value ");
+    scanf("%d", &goal);
 
     int goalIdx = -1;
     for (int idx = 0; idx < len; idx++)
@@ -32,9 +30,9 @@ int main()
 
     if (goalIdx == -1)
     {
-        cout << goal << " is not in array \n";
+        printf("%d is not in array \n", goal);
         return 0;
     }
 
-    cout << goal << " on " << goalIdx + 1 << " place\n";
+    printf("%d on %d place\n", goal, goalIdx + 1);
 }

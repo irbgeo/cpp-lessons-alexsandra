@@ -1,15 +1,13 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 // Сумма чисел от 1 до N
 int main()
 {
     int N = 0;
-    cin >> N;
+    scanf("%d", &N);
 
     if (N<1){
-        cout << "Invalid value\n";
+        printf("Invalid value\n");
         return 1;
     }
 
@@ -19,7 +17,7 @@ int main()
         sum += i;
     }
 
-    cout << sum << "\n";
+    printf("%d\n", sum);
 
     return 0;
 }

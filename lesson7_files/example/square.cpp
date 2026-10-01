@@ -1,18 +1,15 @@
 // 1. Прочитать первое число из файла и вывести его квадрат
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    ifstream fin("./lesson7_files/example/square_input.txt");
+    FILE *fin = fopen("./lesson7_files/example/square_input.txt", "r");
 
     int x;
-    fin >> x;
+    fscanf(fin, "%d", &x);
 
-    fin.close();
+    fclose(fin);
 
-    cout << x << "^2 = " << x * x << "\n";
+    printf("%d^2 = %d\n", x, x * x);
 }

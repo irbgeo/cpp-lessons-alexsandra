@@ -17,47 +17,45 @@ OUTPUT:
 - If a product is not added to the purchase, print a message about it
 */
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int product_count = 0;
-    cout << "Enter quantity of products: ";
-    cin >> product_count;
+    printf("Enter quantity of products: ");
+    scanf("%d", &product_count);
 
     int max_price = 0;
-    cout << "Enter the maximum price of one product: ";
-    cin >> max_price;
+    printf("Enter the maximum price of one product: ");
+    scanf("%d", &max_price);
 
     int discount_percent = 0;
-    cout << "Enter the amount of sale(%): ";
-    cin >> discount_percent;
+    printf("Enter the amount of sale(%%): ");
+    scanf("%d", &discount_percent);
 
     if (discount_percent < 0 || discount_percent > 100)
     {
-        cout << "invalid value of sale amount\n";
+        printf("invalid value of sale amount\n");
         return 1;
     }
 
     int min_purchase_for_discount = 0;
     if (discount_percent != 0)
     {
-        cout << "Enter the price for sale: ";
-        cin >> min_purchase_for_discount;
+        printf("Enter the price for sale: ");
+        scanf("%d", &min_purchase_for_discount);
     }
 
     int total_price = 0;
     for (int i = 0; i < product_count; i++)
     {
         int product_price = 0;
-        cout << "Enter product price " << i + 1 << " : ";
-        cin >> product_price;
+        printf("Enter product price %d : ", i + 1);
+        scanf("%d", &product_price);
 
         if (product_price > max_price)
         {
-            cout << "Product " << i + 1 << " was not added (exceeds the maximum price)\n";
+            printf("Product %d was not added (exceeds the maximum price)\n", i + 1);
             continue;
         }
 
@@ -69,5 +67,7 @@ int main()
         total_price -= total_price * discount_percent / 100;
     }
 
-    cout << "Total price: " << total_price << "\n";
+    printf("Total price: %d\n", total_price);
+
+    return 0;
 }

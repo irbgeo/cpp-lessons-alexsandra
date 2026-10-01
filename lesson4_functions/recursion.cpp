@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 // 1 1 2 3 5 8 Fibonacci
 
@@ -21,7 +19,7 @@ int fibonacci(int n)
 
 int main()
 {
-    cout << fibonacci(6) << "\n";
+    printf("%d\n", fibonacci(6));
 
     return 0;
 }

@@ -1,11 +1,9 @@
 // Реши задание 16 из 3х разных вариантов
 
-// F(1)  =  1;
-// F(n)  =  5 · F(n – 1) + 3 · n
+// F(1)  =  1;
+// F(n)  =  5 · F(n – 1) + 3 · n
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int F(int n){
     if(n==1){
@@ -17,7 +15,7 @@ int F(int n){
 
 int main()
 {
-    cout << F(4) << "\n";
+    printf("%d\n", F(4));
 
     return 0;
 }

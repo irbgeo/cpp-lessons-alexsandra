@@ -1,50 +1,48 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     // initialization variables
     // variable_type value_name;
     char c1;
-    cout << "char:        " << sizeof(c1) << " bytes value " << c1 << "\n";
+    printf("char:        %zu bytes value %c\n", sizeof(c1), c1);
 
     // variable_type variable_name = init_value;
     char c2 = 'B';
-    cout << "char:        " << sizeof(c2) << " bytes value " << c2 << "\n";
+    printf("char:        %zu bytes value %c\n", sizeof(c2), c2);
 
     int v1 = 1;
-    cout << "v1 = " << v1 << "\n";
+    printf("v1 = %d\n", v1);
 
     v1 = 2;
-    cout << "2: value " << v1 << "\n";
+    printf("2: value %d\n", v1);
 
     v1 = 1 + 1;
-    cout << "3: value " << v1 << "\n";
+    printf("3: value %d\n", v1);
 
     v1 = 6 / 3;
-    cout << "v1 = 6/3 : " << v1 << "\n";
+    printf("v1 = 6/3 : %d\n", v1);
 
     v1 = 6 % 3;
-    cout << "v1 = 6%3 : " << v1 << "\n";
+    printf("v1 = 6%%3 : %d\n", v1);
 
     // 5/3 = 1.3333333
     v1 = 5 / 3;
-    cout << "v1 = 5/3 : " << v1 << "\n";
+    printf("v1 = 5/3 : %d\n", v1);
 
     v1 = 5 % 3;
-    cout << "v1 = 5%3 : " << v1 << "\n";
+    printf("v1 = 5%%3 : %d\n", v1);
 
     int v2 = 2, v3 = 3;
 
     v1 = v2;
-    cout << "v1 = v2 : " << v1 << "\n";
+    printf("v1 = v2 : %d\n", v1);
 
     v1 = v2 + v3 * 2; // 8
-    cout << "v1 = v2+v3*2 : " << v1 << "\n";
+    printf("v1 = v2+v3*2 : %d\n", v1);
 
     v1 = v1 + 4;
-    cout << "v1 = v1+1 : " << v1 << "\n";
+    printf("v1 = v1+1 : %d\n", v1);
 
     v1 += 4; // v1 = v1 + 4
     v1 ++; // v1 = v1 + 1

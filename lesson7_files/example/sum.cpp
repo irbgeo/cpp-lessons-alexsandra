@@ -1,26 +1,23 @@
 // 2. Прочитать N, затем N чисел из файла, найти их сумму
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    ifstream fin("./lesson7_files/example/sum_input.txt");
+    FILE *fin = fopen("./lesson7_files/example/sum_input.txt", "r");
 
     int n;
-    fin >> n;
+    fscanf(fin, "%d", &n);
 
     int sum = 0;
     for (int idx = 0; idx < n; idx++)
     {
         int x;
-        fin >> x;
+        fscanf(fin, "%d", &x);
         sum += x;
     }
 
-    fin.close();
+    fclose(fin);
 
-    cout << "sum = " << sum << "\n";
+    printf("sum = %d\n", sum);
 }

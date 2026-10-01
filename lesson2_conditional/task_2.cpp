@@ -1,22 +1,20 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int x = 0;
-    cin >> x;
+    scanf("%d", &x);
 
     if (x > 0)
     {
-        cout << x << " is positive number\n";
+        printf("%d is positive number\n", x);
     }
     else if (x < 0)
     {
-        cout << x << " is negative number\n";
+        printf("%d is negative number\n", x);
     }
     else
     {
-        cout << x << " is zero number\n";
+        printf("%d is zero number\n", x);
     }
 }

@@ -1,18 +1,16 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int x = 0;
-    cin >> x;
+    scanf("%d", &x);
 
     if (x % 2 == 0)
     {
-        cout << x << " is an even number\n";
+        printf("%d is an even number\n", x);
     }
     else
     {
-        cout << x << " is an odd number\n";
+        printf("%d is an odd number\n", x);
     }
 }

@@ -1,38 +1,36 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int N = 0;
-    cin >> N;
+    scanf("%d", &N);
 
     if (N < 1 || N > 9)
     {
-        cout << "Invalid value\n";
+        printf("Invalid value\n");
         return 1;
     }
 
     for (int i = 0; i <= N; i++){
         if (i==0){
-            cout << "\t";
+            printf("\t");
             continue;
         }
-        cout << i << "\t";
+        printf("%d\t", i);
     }
-    cout << "\n";
+    printf("\n");
 
     for (int i = 1; i <= N; i++)
     {
         for (int j = 0; j <= N; j++)
         {
             if (j == 0){
-                cout << i << "\t";
+                printf("%d\t", i);
                 continue;
             }
-            cout << i * j << "\t";
+            printf("%d\t", i * j);
         }
-        cout << "\n";
+        printf("\n");
     }
 
     return 0;

@@ -1,11 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int x = 0, y = 0;
-    cin >> x >> y;
+    scanf("%d %d", &x, &y);
 
-    cout << "x = " << x << " y = " << y << "\nx + y = " << x + y << "\n";
+    printf("x = %d y = %d\nx + y = %d\n", x, y, x + y);
 }

@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 // Функция reverseNumber(int n) - перевернуть число
 
@@ -29,7 +27,7 @@ int reverseNumb(int n)
 
 int main()
 {
-    cout << reverseNumb(456);
+    printf("%d", reverseNumb(456));
 
     return 0;
 }

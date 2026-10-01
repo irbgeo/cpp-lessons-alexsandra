@@ -1,17 +1,15 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    // types in c++
-    bool b = false; // 1 byte,  true / false 000000001
+    // types in c
+    int b = 0;      // 4 bytes, in C we use int for true / false: 1 is true, 0 is false
     char c = 'A';   // 1 byte,  single character 11111111 256
     int i = 1;      // 4 bytes, integer
     float f = 1.1;  // 4 bytes, single-precision float
 
-    cout << "bool:        " << sizeof(b) << " bytes value " << b << "\n";
-    cout << "char:        " << sizeof(c) << " bytes value " << c << "\n";
-    cout << "int:         " << sizeof(i) << " bytes value " << i << "\n";
-    cout << "float:       " << sizeof(f) << " bytes value " << f << "\n";
+    printf("bool (int):  %zu bytes value %d\n", sizeof(b), b);
+    printf("char:        %zu bytes value %c\n", sizeof(c), c);
+    printf("int:         %zu bytes value %d\n", sizeof(i), i);
+    printf("float:       %zu bytes value %g\n", sizeof(f), f);
 }

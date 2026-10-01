@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int toBinary(int number)
 {
@@ -7,7 +6,7 @@ int toBinary(int number)
     while (number > 0)
     {
         int bit = number % 2;
-        binaryNumber = binaryNumber + bit * multiplier; 
+        binaryNumber = binaryNumber + bit * multiplier;
         multiplier = multiplier * 10;
         number = number / 2;
     }
@@ -18,10 +17,10 @@ int toBinary(int number)
 int main()
 {
     int number = 0;
-    cout << "Enter count ";
-    cin >> number;
+    printf("Enter count ");
+    scanf("%d", &number);
 
-    cout << toBinary(number) << "\n";
+    printf("%d\n", toBinary(number));
 
     return 0;
 }

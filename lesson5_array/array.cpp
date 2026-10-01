@@ -1,15 +1,13 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 void output(int *arr, int len)
 {
     for (int idx = 0; idx < len; idx++)
     {
-        cout << *(arr + idx) << "\n";
+        printf("%d\n", *(arr + idx));
     }
 
-    cout << "\n";
+    printf("\n");
 }
 
 int main()
@@ -29,8 +27,8 @@ int main()
 
     for (int idx = 0; idx < len; idx++)
     {
-        cout << idx << ": enter value ";
-        cin >> arr[idx];
+        printf("%d: enter value ", idx);
+        scanf("%d", &arr[idx]);
     }
 
     output(arr, len);

@@ -1,19 +1,16 @@
 // 4. Найти максимум среди чисел файла и записать его в output.txt
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    ifstream fin("./lesson7_files/example/max_input.txt");
+    FILE *fin = fopen("./lesson7_files/example/max_input.txt", "r");
 
     int maxValue = 0;
-    fin >> maxValue;
+    fscanf(fin, "%d", &maxValue);
 
     int x = 0;
-    while (fin >> x)
+    while (fscanf(fin, "%d", &x) == 1)
     {
         if (x > maxValue)
         {
@@ -21,11 +18,11 @@ int main()
         }
     }
 
-    fin.close();
+    fclose(fin);
 
-    ofstream fout("./lesson7_files/example/output.txt");
-    fout << maxValue << "\n";
-    fout.close();
+    FILE *fout = fopen("./lesson7_files/example/output.txt", "w");
+    fprintf(fout, "%d\n", maxValue);
+    fclose(fout);
 
-    cout << "max = " << maxValue << " (written to output.txt)\n";
+    printf("max = %d (written to output.txt)\n", maxValue);
 }

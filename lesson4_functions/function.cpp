@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 /*type_of_return_value function_name(type_of_arg1 arg1_name,type_of_arg2 arg2_name,type_of_arg3 arg3_name)
 {
@@ -13,21 +11,21 @@ using namespace std;
 
 void outputHW()
 {
-    cout << "Hello, World!\n";
+    printf("Hello, World!\n");
 }
 
 // no return 3 args
 void outputArgs(int arg1, int arg2, int param)
 {
-    cout << "arg1 = " << arg1 << " arg2 + param = " << arg2 + param << "\n";
+    printf("arg1 = %d arg2 + param = %d\n", arg1, arg2 + param);
 }
 
 // exist return no args
 int inputI()
 {
     int i = 0;
-    cout << "Enter i: ";
-    cin >> i;
+    printf("Enter i: ");
+    scanf("%d", &i);
 
     return i;
 }
@@ -54,16 +52,16 @@ int main()
 
     int k = inputI();
 
-    cout << "k = " << k << "\n";
+    printf("k = %d\n", k);
 
-    cout << "5+6=" << sum(5, 6) << "\n";
-    cout << "7+6=" << sum(7, 6) << "\n";
+    printf("5+6=%d\n", sum(5, 6));
+    printf("7+6=%d\n", sum(7, 6));
 
     int b = 7;
 
     int bb = add1(b);
 
-    cout << b << " " << bb << "\n";
+    printf("%d %d\n", b, bb);
 
     return 0;
 }

@@ -1,12 +1,10 @@
-// Файл содержит последовательность целых чисел, по модулю не превышающих 10 000. Назовём парой два идущих подряд элемента последовательности.
+// Файл содержит последовательность целых чисел, по модулю не превышающих 10 000. Назовём парой два идущих подряд элемента последовательности.
 // Определите количество таких пар, в которых запись ровно одного элемента заканчивается цифрой 6, а сумма квадратов элементов пары меньше, чем квадрат наименьшего из элементов последовательности, запись которых заканчивается цифрой 6.
 // В ответе запишите два числа: сначала количество найденных пар, затем максимальную сумму квадратов элементов этих пар.
 
-#include <iostream>
-#include <fstream>
+#include <stdio.h>
 
-using namespace std;
-
+// модуль числа (в библиотеке есть готовая: abs из <stdlib.h>)
 int abs(int x){
     if (x >= 0){
         return x;
@@ -15,7 +13,8 @@ int abs(int x){
     return -1*x;
 }
 
-bool isTarget(int n)
+// 1 - да, 0 - нет
+int isTarget(int n)
 {
     return abs(n) % 10 == 6;
 }
@@ -27,24 +26,24 @@ int sumOfSquares(int a, int b)
 
 int findTargetNumber()
 {
-    ifstream fin("./17/1_in.txt");
-    if (!fin.is_open())
+    FILE *fin = fopen("./17/1_in.txt", "r");
+    if (fin == NULL)
     {
-        cout << "cannot open input.txt\n";
+        printf("cannot open input.txt\n");
         return 1;
     }
 
     int targetNumber = 0;
-    bool isMetTarget = false;
+    int isMetTarget = 0;
 
     int x = 0;
-    while (fin >> x)
+    while (fscanf(fin, "%d", &x) == 1)
     {
         if (isTarget(x))
         {
             if (!isMetTarget)
             {
-                isMetTarget = true;
+                isMetTarget = 1;
                 targetNumber = x;
             }
             else if (x < targetNumber)
@@ -54,12 +53,12 @@ int findTargetNumber()
         }
     }
 
-    fin.close();
+    fclose(fin);
 
     return targetNumber;
 }
 
-bool isGoodPair(int a, int b, int squareTarget)
+int isGoodPair(int a, int b, int squareTarget)
 {
     return ((isTarget(a) && !isTarget(b)) || (!isTarget(a) && isTarget(b))) && sumOfSquares(a, b) < squareTarget;
 }
@@ -69,22 +68,22 @@ int main()
     int target = findTargetNumber();
     int squareTarget = target * target;
 
-    ifstream fin("./17/1_in.txt");
+    FILE *fin = fopen("./17/1_in.txt", "r");
 
-    if (!fin.is_open())
+    if (fin == NULL)
     {
-        cout << "cannot open input.txt\n";
+        printf("cannot open input.txt\n");
         return 1;
     }
 
     int count = 0;
     int firstNumber = 0, secondNumber = 0;
-    fin >> firstNumber;
+    fscanf(fin, "%d", &firstNumber);
 
-    bool isMetGoodPair = false;
+    int isMetGoodPair = 0;
     int maxGoodPairSum = 0;
 
-    while (fin >> secondNumber)
+    while (fscanf(fin, "%d", &secondNumber) == 1)
     {
         if (isGoodPair(firstNumber, secondNumber, squareTarget))
         {
@@ -93,7 +92,7 @@ int main()
 
             if (!isMetGoodPair)
             {
-                isMetGoodPair = true;
+                isMetGoodPair = 1;
                 maxGoodPairSum = goodPairSum;
             }
             else if (maxGoodPairSum < goodPairSum)
@@ -105,7 +104,7 @@ int main()
         firstNumber = secondNumber;
     }
 
-    fin.close();
+    fclose(fin);
 
-    cout << count << " " << maxGoodPairSum;
+    printf("%d %d", count, maxGoodPairSum);
 }

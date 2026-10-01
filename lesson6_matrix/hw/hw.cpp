@@ -1,6 +1,5 @@
 // 1. Найти все элементы больше N в матрице
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int findElements()
 {
@@ -11,7 +10,7 @@ int findElements()
         {8, 2, 9},
         {4, 5, 7}};
 
-    cout << "Элементы больше " << N_limit << ":\n";
+    printf("Элементы больше %d:\n", N_limit);
 
     for (int i = 0; i < 3; i++)
     {
@@ -19,12 +18,12 @@ int findElements()
         {
             if (matrix[i][j] > N_limit)
             {
-                cout << matrix[i][j] << " ";
+                printf("%d ", matrix[i][j]);
             }
         }
     }
 
-    cout << "\n";
+    printf("\n");
 
     return 0;
 }
@@ -52,7 +51,7 @@ int sum()
         }
     }
 
-    cout << "Сумма всех элементов матрицы: " << sum << "\n";
+    printf("Сумма всех элементов матрицы: %d\n", sum);
 
     return 0;
 }
@@ -60,8 +59,6 @@ int sum()
 // 3. Посчитать нули в матрице
 int countZero()
 {
-    int N_limit = 5;
-
     int matrix[3][3] = {
         {1, 0, 3},
         {8, 2, 9},
@@ -79,7 +76,7 @@ int countZero()
         }
     }
 
-    cout << "Количество нулей в  матрицы: " << zeroCount << "\n";
+    printf("Количество нулей в  матрицы: %d\n", zeroCount);
 
     return 0;
 }
@@ -89,7 +86,7 @@ int circleShift()
 {
     const int lineNumb = 5, columnNumb = 5;
 
-    int matrix[lineNumb][columnNumb] = {
+    int matrix[5][5] = {
         {1, 2, 3, 4, 5},
         {6, 7, 8, 9, 10},
         {11, 12, 13, 14, 15},
@@ -116,14 +113,14 @@ int circleShift()
         j = newJ;
     } while (!(i == 0 && j == 0));
 
-    cout << "Матрица после циклического сдвига:\n";
+    printf("Матрица после циклического сдвига:\n");
     for (int i = 0; i < lineNumb; i++)
     {
         for (int j = 0; j < columnNumb; j++)
         {
-            cout << matrix[i][j] << " ";
+            printf("%d ", matrix[i][j]);
         }
-        cout << "\n";
+        printf("\n");
     }
 
     return 0;
@@ -161,7 +158,7 @@ int minSum()
         }
     }
 
-    cout << "Столбец с минимальной суммой: " << min_column + 1 << "\n";
+    printf("Столбец с минимальной суммой: %d\n", min_column + 1);
 
     return 0;
 }
@@ -189,7 +186,7 @@ int max()
         }
     }
 
-    cout << "Максимальный элемент в матрице: " << max << "\n";
+    printf("Максимальный элемент в матрице: %d\n", max);
 
     return 0;
 }
@@ -216,7 +213,7 @@ int min()
         }
     }
 
-    cout << "Максимальный элемент в матрице: " << min << "\n";
+    printf("Максимальный элемент в матрице: %d\n", min);
 
     return 0;
 }

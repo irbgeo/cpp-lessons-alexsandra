@@ -1,14 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-    cout << "Input x: ";
+    printf("Input x: ");
 
     int x = 0;
-    cin >> x;
+    scanf("%d", &x);
     
     int sq = x*x;
-    cout << "x^2 = " << sq << "\n";
+    printf("x^2 = %d\n", sq);
 }

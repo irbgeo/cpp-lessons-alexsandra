@@ -1,14 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
     int a = 3, b = 5;
 
-    cout << "a = " << a << "; b = " << b << "\n"; // a = 3; b = 5
+    printf("a = %d; b = %d\n", a, b); // a = 3; b = 5
 
     // code
 
-    cout << "a = " << a << "; b = " << b << "\n"; // a = 5; b = 3
+    printf("a = %d; b = %d\n", a, b); // a = 5; b = 3
 }
