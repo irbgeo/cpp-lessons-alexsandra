@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void output(int *arr, int len)
+void output(int arr[], int len)
 {
     for (int idx = 0; idx < len; idx++)
     {
-        printf("%d\n", *(arr + idx));
+        printf("%d\n", arr[idx]);
     }
 
     printf("\n");

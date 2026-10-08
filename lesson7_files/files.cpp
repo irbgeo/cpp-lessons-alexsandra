@@ -6,8 +6,6 @@
 
 int main()
 {
-
-    printf("%d", -16 % 10);
     // 1. чтение до конца файла, пока числа не закончатся
     FILE *fileInAll = fopen("./lesson7_files/input.txt", "r");
 
@@ -26,7 +24,7 @@ int main()
         sum += value;
     }
 
-    printf("numbers in file: %d, sum: %d\n", count, sum);
+    printf("\nnumbers in file: %d, sum: %d\n", count, sum);
 
     fclose(fileInAll);
 
