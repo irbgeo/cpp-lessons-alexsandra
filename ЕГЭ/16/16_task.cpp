@@ -5,17 +5,21 @@
 
 #include <stdio.h>
 
-int F(int n){
+int F1(int n){
     if(n==1){
         return 1;
     }
 
-    return 5*F(n-1)+3*n;
+    return 5*F1(n-1)+3*n;
+}
+
+int F2(){
+
 }
 
 int main()
 {
-    printf("%d\n", F(4));
+    printf("%d\n", F1(4));
 
     return 0;
 }
