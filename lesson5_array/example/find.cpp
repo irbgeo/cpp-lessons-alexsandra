@@ -2,11 +2,9 @@
 
 int main()
 {
-    int len = 0;
-    printf("enter len of array ");
-    scanf("%d", &len);
+    const int len = 5;
 
-    int arr[len];
+    int arr[5];
 
     printf("enter array ");
     for (int idx = 0; idx < len; idx++)

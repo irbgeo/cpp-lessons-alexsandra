@@ -13,7 +13,7 @@ void output(int arr[], int len)
 int main()
 {
     int len = 3;
-    int arr[len];
+    int arr[3];
     // arr[idx] <- обращение к элементу с индексом idx индекс от 0 до len-1
 
     output(arr, len);
